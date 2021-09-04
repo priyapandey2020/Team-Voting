@@ -44,13 +44,13 @@ export default class HomeScreen extends Component {
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              <Text style={{ fontSize:20}}>Team AAA</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team B</Text>
+              <Text style={{ fontSize:20}}>Team BBB</Text>
             </TouchableOpacity>
 
           </View>
