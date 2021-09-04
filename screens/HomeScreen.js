@@ -15,14 +15,14 @@ export default class HomeScreen extends Component {
 
   teamA(){
    db.ref('/').update({
-     'teamA':1
+     'TeamSimba':1
    })
  }
 
  teamB(){
    console.log(db);
    db.ref('/').update({
-     'teamB':2
+     'TeamNurvan':2
    })
  }
 
@@ -44,13 +44,13 @@ export default class HomeScreen extends Component {
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team AAA</Text>
+              <Text style={{ fontSize:20}}>Team Simba</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team BBB</Text>
+              <Text style={{ fontSize:20}}>Team Nirvan</Text>
             </TouchableOpacity>
 
           </View>
