@@ -6,25 +6,53 @@ import {
   TouchableOpacity,
   Header,
   Image,
+  TextInput
 } from 'react-native';
 
 import AppHeader from '../components/AppHeader';
 import db from '../config';
 
+var numA = 0;
+var numB = 0;
+var voted = 'false';
+
+
+
 export default class HomeScreen extends Component {
+  
+constructor(){
+  super()
+  this.state={
+      voted:""
+    }
+}
 
-  teamA(){
+
+  teamA=(text)=>{
+    this.setState({
+      voted:text
+      })
+    numA = numA +1;
    db.ref('/').update({
-     'teamA':1
+     'teamA':numA
    })
  }
 
- teamB(){
-   console.log(db);
+ teamB=(text)=>{
+   this.setState({
+      voted:text
+      })
+   numB = numB +1;
    db.ref('/').update({
-     'teamB':2
+     'teamB':numB
    })
  }
+
+ potato=()=>{
+   alert('already voted')
+ }
+
+
 
   render() {
     return (
@@ -40,18 +68,29 @@ export default class HomeScreen extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
+          
+           
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={()=>{this.state.voted===""?
+        this.teamA():this.potato()}}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={()=>{this.state.voted===""?
+        this.teamB():this.potato()}}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
+
+           <TouchableOpacity
+           style={styles.buttons}
+              onPress ={()=>{alert('Team A: '+numA+'\n'+'Team B: '+numB)}}>
+              <Text style={{fontSize:20}}>Results</Text>
+            </TouchableOpacity>
+
 
           </View>
         </View>
