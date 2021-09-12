@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor:"coral",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 15,
     margin:10,
     width: 150,
@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
   },
   ratingContainer: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 60,
   },
 });
