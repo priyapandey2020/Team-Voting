@@ -22,7 +22,7 @@ export default class HomeScreen extends Component {
  teamB(){
    console.log(db);
    db.ref('/').update({
-     'teamB':2
+     'teamB':1
    })
  }
 
