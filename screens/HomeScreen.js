@@ -14,14 +14,14 @@ import db from '../config';
 export default class HomeScreen extends Component {
 
   teamA(){
-   db.ref('/').update({
+   db.ref('votes'+'/').update({
      'teamA':1
    })
  }
 
  teamB(){
    console.log(db);
-   db.ref('/').update({
+   db.ref('votes'+'/').update({
      'teamB':2
    })
  }
