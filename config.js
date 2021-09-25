@@ -9,7 +9,8 @@ var firebaseConfig = {
         storageBucket: "buzzerapp-16b98.appspot.com",
         messagingSenderId: "517791323642",
         appId: "1:517791323642:web:6bc2c7aa59859d728d4043"
-      
+  
+        
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
