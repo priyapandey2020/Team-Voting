@@ -69,10 +69,10 @@ const styles = StyleSheet.create({
     backgroundColor:"coral",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 4,
     borderRadius: 15,
     margin:10,
-    width: 150,
+    width: 100,
     height: 50,
   },
   ratingContainer: {
