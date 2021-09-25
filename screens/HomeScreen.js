@@ -14,15 +14,15 @@ import db from '../config';
 export default class HomeScreen extends Component {
 
   teamA(){
-   db.ref('votes'+'/').update({
+   db.ref('/').update({
      'teamA':1
    })
  }
 
  teamB(){
    console.log(db);
-   db.ref('votes'+'/').update({
-     'teamB':2
+   db.ref('/').update({
+     'teamB':1
    })
  }
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"yellow",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
