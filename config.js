@@ -1,10 +1,14 @@
 import firebase from 'firebase';
 
-// add SDK Firebase
-var firebaseConfig = {
 
+var firebaseConfig = {
+    apiKey: "AIzaSyCNkGQoins2IsrjboYrF8MfbSamuBbX3BA",
+  authDomain: "project-67-9df1d.firebaseapp.com",
+  projectId: "project-67-9df1d",
+  storageBucket: "project-67-9df1d.appspot.com",
+  messagingSenderId: "549673769272",
+  appId: "1:549673769272:web:88ee18a8393556172d89cd"
 };
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 export default firebase.database();

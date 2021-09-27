@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     margin:10,
     width: 150,
-    height: 50,
+    height: 55,
   },
   ratingContainer: {
     alignSelf: 'center',
