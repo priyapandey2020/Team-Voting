@@ -13,11 +13,11 @@ export default class AppHeader extends React.Component{
 
 const styles = StyleSheet.create({
   textContainer:{
-    backgroundColor: '#FFC300'
+    backgroundColor: 'white'
   },
   text:{
     padding: 20,
-    fontSize: 22,
+    fontSize: 21,
     fontWeight: 'bold',
     textAlign: 'center',
   }
