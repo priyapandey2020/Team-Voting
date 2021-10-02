@@ -22,7 +22,7 @@ export default class HomeScreen extends Component {
  teamB(){
    console.log(db);
    db.ref('/').update({
-     'teamB':2
+     'teamB':1
    })
  }
 
@@ -34,7 +34,7 @@ export default class HomeScreen extends Component {
           <View style={styles.buttonsContainer}>
             <TouchableOpacity>
               <Image
-                style={{ width: 300, height: 220, marginLeft: 5 }}
+                style={{ width: 320, height: 250, marginLeft: 10 }}
                 source={require('../assets/TeamImage.png')}
               />
             </TouchableOpacity>
@@ -44,13 +44,13 @@ export default class HomeScreen extends Component {
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              <Text style={{ fontSize:23}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team B</Text>
+              <Text style={{ fontSize:23}}>Team B</Text>
             </TouchableOpacity>
 
           </View>
