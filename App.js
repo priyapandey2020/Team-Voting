@@ -10,7 +10,7 @@ import HomeScreen from './screens/HomeScreen';
 export default class App extends React.Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <AppContainer/>
       </View>
     );
@@ -22,3 +22,12 @@ var AppNavigator = createSwitchNavigator({
 });
 
 const AppContainer = createAppContainer(AppNavigator);
+
+const styles = StyleSheet.create({
+    container: {
+    flex:1,
+    backgroundColor:'#fff8b3',
+    height:'100%',
+    width:'100%'
+  }
+});

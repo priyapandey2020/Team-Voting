@@ -32,25 +32,23 @@ export default class HomeScreen extends Component {
         <AppHeader />
         <View>
           <View style={styles.buttonsContainer}>
-            <TouchableOpacity>
               <Image
                 style={{ width: 300, height: 220, marginLeft: 5 }}
                 source={require('../assets/TeamImage.png')}
               />
-            </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
-            <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
+            <Text style={{ textAlign: 'center',fontSize:30, fontWeight:'bold'}}>VOTE HERE</Text>
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              <Text style={{ fontSize:20, fontWeight:'bold' }}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team B</Text>
+              <Text style={{ fontSize:20, fontWeight:'bold' }}>Team B</Text>
             </TouchableOpacity>
 
           </View>
@@ -63,14 +61,14 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   buttonsContainer: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 30,
+    backgroundColor:'#fff8b3'
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"#ffe91a",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
-    borderRadius: 15,
+    borderRadius: 30,
     margin:10,
     width: 150,
     height: 50,
@@ -78,5 +76,5 @@ const styles = StyleSheet.create({
   ratingContainer: {
     alignSelf: 'center',
     marginTop: 50,
-  },
+  }
 });
