@@ -78,5 +78,6 @@ const styles = StyleSheet.create({
   ratingContainer: {
     alignSelf: 'center',
     marginTop: 50,
+    backgroundColor:"lightblue"
   },
 });
