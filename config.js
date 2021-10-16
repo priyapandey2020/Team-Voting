@@ -1,6 +1,5 @@
 import firebase from 'firebase';
 
-
 const firebaseConfig = {
     apiKey: "AIzaSyAv_a-apB6z9bQmiEoPAh9v2ioBpf1j9D8",
     authDomain: "team-voting-8b551.firebaseapp.com",
