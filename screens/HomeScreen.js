@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"red",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 5,
     borderRadius: 15,
     margin:10,
-    width: 150,
+    width: 135,
     height: 50,
   },
   ratingContainer: {
