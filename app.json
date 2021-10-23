@@ -22,6 +22,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "A newletter app"
+    "description": "A good newletter app"
   }
 }
