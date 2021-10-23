@@ -10,8 +10,16 @@ import {
 
 import AppHeader from '../components/AppHeader';
 import db from '../config';
+import {Audio} from 'expo-av';
 
 export default class HomeScreen extends Component {
+
+   playSound = async () => {
+    await Audio.Sound.createAsync(
+      { uri: 'https://www.voicy.network/clips/fEmiZ82RgUS1rgZOD7V6ng' },
+      { shouldPlay: true }
+    );
+  }
 
   teamA(){
    db.ref('/').update({
@@ -40,17 +48,17 @@ export default class HomeScreen extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
-            <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
+            <Text style={{ textAlign: 'center',fontSize:30 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              onPress ={this.playSound,this.teamA()}>
+              <Text style={{ fontSize:20, fontWeight: 'bold'}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team B</Text>
+              onPress ={this.playSound,this.teamB()}>
+              <Text style={{ fontSize:20, fontWeight: 'bold'}}>Team B</Text>
             </TouchableOpacity>
 
           </View>
@@ -66,11 +74,11 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"skyblue",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
-    borderRadius: 15,
+    borderWidth: 3,
+    borderRadius: 20,
     margin:10,
     width: 150,
     height: 50,
