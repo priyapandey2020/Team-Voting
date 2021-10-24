@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
   },
   ratingContainer: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 10,
   },
 });
