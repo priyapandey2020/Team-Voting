@@ -13,6 +13,10 @@ import db from '../config';
 
 export default class HomeScreen extends Component {
 
+  goToLastScreen(){
+    this.props.navigation.navigate('VotingDone');
+  }
+
   teamA(){
    db.ref('/').update({
      'teamA':1
@@ -43,13 +47,19 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={()=>{
+                  this.teamA();
+                  this.goToLastScreen();
+              }}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={()=>{
+                this.teamB();
+                this.goToLastScreen();
+            }}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
 
