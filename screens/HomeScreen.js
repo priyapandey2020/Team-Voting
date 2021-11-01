@@ -1,3 +1,4 @@
+import { database } from 'firebase';
 import React, { Component } from 'react';
 import {
   Text,
@@ -12,19 +13,47 @@ import AppHeader from '../components/AppHeader';
 import db from '../config';
 
 export default class HomeScreen extends Component {
+  constructor(){
+    super();
+    this.state = {
+      'teamA': 0,
+      'teamB': 0
+    }
+  }
 
-  teamA(){
-   db.ref('/').update({
-     'teamA':1
-   })
- }
+  getTeams = async () => {
+    var teamARef = await db.ref('/TeamA');
+    teamARef.on('value',(data)=>{
+      this.setState({
+        'teamA': data.val()
+      })
+    })
 
- teamB(){
-   console.log(db);
-   db.ref('/').update({
-     'teamB':2
-   })
- }
+    var teamBRef = await db.ref('/TeamB');
+    teamBRef.on('value', (data)=>{
+      this.setState({
+        'teamB': data.val()
+      })
+    })
+  }
+
+  updateTeamA = () => {
+    this.state.teamA = this.state.teamA + 1;
+    db.ref('/').update({
+      'TeamA': this.state.teamA
+    })
+  }
+
+  updateTeamB = () => {
+    this.state.teamB = this.state.teamB + 1;
+    db.ref('/').update({
+      'TeamB': this.state.teamB
+    })
+  }
+
+  componentDidMount(){
+    this.getTeams();
+  }
 
   render() {
     return (
@@ -35,7 +64,7 @@ export default class HomeScreen extends Component {
             <TouchableOpacity>
               <Image
                 style={{ width: 300, height: 220, marginLeft: 5 }}
-                source={require('../assets/TeamImage.png')}
+                source={{uri: 'https://raw.githubusercontent.com/ParthKshirsagar/Team-Voting/main/assets/TeamImage.png'}}
               />
             </TouchableOpacity>
           </View>
@@ -43,13 +72,19 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={()=>{
+                this.updateTeamA();
+                alert("Thank you for voting!!");
+              }}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={()=>{
+                this.updateTeamB();
+                alert("Thank you for voting!!")
+              }}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
 
