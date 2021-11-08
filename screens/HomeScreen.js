@@ -15,14 +15,14 @@ export default class HomeScreen extends Component {
 
   teamA(){
    db.ref('/').update({
-     'teamA':1
+     'teamA':5
    })
  }
 
  teamB(){
    console.log(db);
    db.ref('/').update({
-     'teamB':2
+     'teamB':10
    })
  }
 
@@ -44,13 +44,13 @@ export default class HomeScreen extends Component {
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              <Text style={{ fontSize:20,fontWeight:"bold"}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team B</Text>
+              <Text style={{ fontSize:20,fontWeight:"bold"}}>Team B</Text>
             </TouchableOpacity>
 
           </View>
@@ -62,18 +62,20 @@ export default class HomeScreen extends Component {
 
 const styles = StyleSheet.create({
   buttonsContainer: {
+    flex:1,
     alignSelf: 'center',
     marginTop: 50,
+    backgroundColor:"#EF987E"
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"#FEA6A1",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
-    borderRadius: 15,
+    borderWidth: 2,
+    borderRadius: 5,
     margin:10,
-    width: 150,
-    height: 50,
+    width: 120,
+    height: 40,
   },
   ratingContainer: {
     alignSelf: 'center',
