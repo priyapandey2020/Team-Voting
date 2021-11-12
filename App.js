@@ -21,4 +21,4 @@ var AppNavigator = createSwitchNavigator({
   HomeScreen: HomeScreen
 });
 
-const AppContainer = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator);,
