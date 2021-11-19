@@ -15,16 +15,17 @@ export default class HomeScreen extends Component {
 
   teamA(){
    db.ref('/').update({
-     'teamA':1
+     'teamA': 1
    })
  }
 
  teamB(){
    console.log(db);
    db.ref('/').update({
-     'teamB':2
+     'teamB':1
    })
  }
+ 
 
   render() {
     return (
@@ -40,17 +41,17 @@ export default class HomeScreen extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
-            <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
+            <Text style={{ textAlign: 'center',fontSize:25, fontFamily: 'Signika', fontWeight: 'bold'}}>Vote Here 👇</Text>
             <TouchableOpacity
-              style={styles.buttons}
+              style={styles.button1}
               onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              <Text style={{ fontSize:20, color: 'white' }}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={styles.buttons}
+              style={styles.button2}
               onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team B</Text>
+              <Text style={{ fontSize:20, color: 'white' }}>Team B</Text>
             </TouchableOpacity>
 
           </View>
@@ -65,8 +66,18 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 50,
   },
-  buttons: {
-    backgroundColor:"coral",
+  button1: {
+    backgroundColor:"blue",
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderRadius: 15,
+    margin:10,
+    width: 150,
+    height: 50,
+  },
+  button2:{
+    backgroundColor:"red",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
