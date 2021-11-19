@@ -5,7 +5,7 @@ export default class AppHeader extends React.Component{
   render(){
     return(
       <View style= {styles.textContainer}>
-        <Text style={styles.text}>Team Voting App</Text>
+        <Text style={styles.text}>🌸Team Voting App🌸</Text>
       </View>
     );
   }
@@ -17,9 +17,11 @@ const styles = StyleSheet.create({
   },
   text:{
     padding: 20,
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
+    fontFamily: 'cursive',
+    color: '#990099'
   }
 });
 
