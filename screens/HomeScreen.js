@@ -71,9 +71,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderRadius: 15,
-    margin:10,
-    width: 150,
-    height: 50,
+    margin:5,
+    width: 120,
+    height: 30,
   },
   ratingContainer: {
     alignSelf: 'center',
