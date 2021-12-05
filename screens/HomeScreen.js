@@ -35,7 +35,7 @@ export default class HomeScreen extends Component {
             <TouchableOpacity>
               <Image
                 style={{ width: 300, height: 220, marginLeft: 5 }}
-                source={require('../assets/TeamImage.png')}
+                source={require('../assets/img.png')}
               />
             </TouchableOpacity>
           </View>
