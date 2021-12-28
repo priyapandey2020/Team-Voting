@@ -22,7 +22,7 @@ export default class HomeScreen extends Component {
  teamB(){
    console.log(db);
    db.ref('/').update({
-     'teamB':2
+     'teamB':1
    })
  }
 
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderRadius: 15,
+    borderRadius: 20,
     margin:10,
     width: 150,
     height: 50,
