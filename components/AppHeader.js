@@ -17,9 +17,10 @@ const styles = StyleSheet.create({
   },
   text:{
     padding: 20,
-    fontSize: 22,
+    fontSize: 17,
     fontWeight: 'bold',
     textAlign: 'center',
+    textFont: 'Times New Romen'
   }
 });
 
