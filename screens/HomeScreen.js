@@ -63,20 +63,20 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   buttonsContainer: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 45,
   },
   buttons: {
     backgroundColor:"coral",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 3,
     borderRadius: 15,
     margin:10,
-    width: 150,
-    height: 50,
+    width: 100,
+    height: 40,
   },
   ratingContainer: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 40,
   },
 });
