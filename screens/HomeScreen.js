@@ -79,4 +79,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 50,
   },
+  
+ fullApp : {
+   backgroundColor : "grey"
+ }
+
 });
