@@ -12,21 +12,44 @@ import AppHeader from '../components/AppHeader';
 import db from '../config';
 
 export default class HomeScreen extends Component {
+  constructor(){
+    super();
+    this.state = {
+      teamACount: 0,
+      teamBCount: 0
+    }
+  }
 
-  teamA(){
+  teamA = () => {
+   console.log(`Team A`)
+   console.log(this.state)
    db.ref('/').update({
-     'teamA':1
+     'teamA': 1,
+     'teamACount': this.state.teamACount + 1
    })
+   
+   this.setState({
+     teamACount: this.state.teamACount + 1
+   });
+   
  }
 
- teamB(){
+ teamB = () => {
+   console.log("Team B")
    console.log(db);
    db.ref('/').update({
-     'teamB':2
-   })
+     'teamB':2,
+     'teamBCount': this.state.teamBCount + 1
+   });
+   this.setState({
+     teamBCount: this.state.teamBCount + 1 
+   });
+   
  }
 
   render() {
+    console.log(`render: ${this.state}`);
+
     return (
       <View>
         <AppHeader />
@@ -43,13 +66,13 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={this.teamA}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={this.teamB}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
 
