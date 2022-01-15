@@ -4,7 +4,7 @@ import firebase from 'firebase';
 var firebaseConfig = {
 
 };
-// Izicializar Firebase
+// Inicializar Firebase
 firebase.initializeApp(firebaseConfig);
 
 export default firebase.database();
