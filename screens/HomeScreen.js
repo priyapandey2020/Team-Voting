@@ -35,7 +35,7 @@ export default class HomeScreen extends Component {
             <TouchableOpacity>
               <Image
                 style={{ width: 300, height: 220, marginLeft: 5 }}
-                source={require('../assets/TeamImage.png')}
+                source={require('../assets/dreamcatcher.png')}
               />
             </TouchableOpacity>
           </View>
@@ -44,13 +44,16 @@ export default class HomeScreen extends Component {
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              <Text style={{ fontSize:20}}>Dreamcatcher</Text>
             </TouchableOpacity>
-
+            <Image
+                style={{ width: 300, height: 220, marginLeft: 5 }}
+                source={require('../assets/mamamoo.jpeg')}
+              />
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team B</Text>
+              <Text style={{ fontSize:20}}>Mamamoo</Text>
             </TouchableOpacity>
 
           </View>
