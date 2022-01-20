@@ -35,7 +35,7 @@ export default class HomeScreen extends Component {
             <TouchableOpacity>
               <Image
                 style={{ width: 300, height: 220, marginLeft: 5 }}
-                source={require('../assets/TeamImage.png')}
+                source={require('../assets/teamVoting.jpg')}
               />
             </TouchableOpacity>
           </View>
@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"pink",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
-    borderRadius: 15,
-    margin:10,
-    width: 150,
+    borderWidth: 3,
+    borderRadius: 2,
+    margin:9,
+    width: 160,
     height: 50,
   },
   ratingContainer: {
