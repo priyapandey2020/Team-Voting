@@ -13,9 +13,13 @@ import db from '../config';
 
 export default class HomeScreen extends Component {
 
+  
+
   teamA(){
    db.ref('/').update({
-     'teamA':1
+     'teamA': 1 
+     
+     
    })
  }
 
@@ -34,13 +38,13 @@ export default class HomeScreen extends Component {
           <View style={styles.buttonsContainer}>
             <TouchableOpacity>
               <Image
-                style={{ width: 300, height: 220, marginLeft: 5 }}
+                style={{ width: 200, height: 150, marginLeft: 5 }}
                 source={require('../assets/TeamImage.png')}
               />
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
-            <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
+            <Text style={{ textAlign: 'center',fontSize:15 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamA()}>
@@ -66,7 +70,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"blue",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
