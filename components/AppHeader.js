@@ -1,10 +1,14 @@
-import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+// Modules Import
+import React, { Component } from "react";
+import { Text, View, StyleSheet } from "react-native";
 
-export default class AppHeader extends React.Component{
-  render(){
-    return(
-      <View style= {styles.textContainer}>
+/**
+ * @returns The App header
+ */
+export default class AppHeader extends Component {
+  render() {
+    return (
+      <View style={styles.textContainer}>
         <Text style={styles.text}>Team Voting App</Text>
       </View>
     );
@@ -12,14 +16,13 @@ export default class AppHeader extends React.Component{
 }
 
 const styles = StyleSheet.create({
-  textContainer:{
-    backgroundColor: '#FFC300'
+  textContainer: {
+    backgroundColor: "#FFC300",
   },
-  text:{
+  text: {
     padding: 20,
     fontSize: 22,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  }
+    fontWeight: "bold",
+    textAlign: "center",
+  },
 });
-
