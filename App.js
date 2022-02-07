@@ -16,7 +16,7 @@ export default class App extends React.Component {
     );
   }
 }
-
+//making a pull a reqest
 var AppNavigator = createSwitchNavigator({
   HomeScreen: HomeScreen
 });
