@@ -1,10 +1,16 @@
 import firebase from 'firebase';
 
-// add SDK Firebase
-var firebaseConfig = {
 
+const firebaseConfig = {
+  apiKey: "AIzaSyAzHH9HvDJnckT484EBtmzWMXM5dpR4pXA",
+  authDomain: "team-voting-app-bcd7e.firebaseapp.com",
+  projectId: "team-voting-app-bcd7e",
+  storageBucket: "team-voting-app-bcd7e.appspot.com",
+  messagingSenderId: "588968602256",
+  appId: "1:588968602256:web:75ffea49cb8e5f1eca4615",
+  measurementId: "G-3FCCMGZFNT"
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
-export default firebase.database();
+  firebase.initializeApp(firebaseConfig);
+  
+  export default firebase.database();
