@@ -10,21 +10,44 @@ import {
 
 import AppHeader from '../components/AppHeader';
 import db from '../config';
-
+import firebase from 'firebase';
 export default class HomeScreen extends Component {
 
-  teamA(){
-   db.ref('/').update({
-     'teamA':1
+  teamA(score){
+    //update vote values of Team A in the database
+
+   db.ref('/TeamA').update({
+     'score':+1,
+     
+
    })
+    this.props.navigation.navigate('EndScreen')
+    
  }
 
  teamB(){
-   console.log(db);
-   db.ref('/').update({
-     'teamB':2
+   db.ref('/TeamB').update({
+     'score':2,
+     
+   })
+     this.props.navigation.navigate('EndScreen')
+ }
+ back(){
+   db.ref('/TeamA').update({
+  
+  'score':0
+
+   })
+      db.ref('/TeamB').update({
+
+  'score':0
+
    })
  }
+
+
+
+
 
   render() {
     return (
@@ -32,7 +55,7 @@ export default class HomeScreen extends Component {
         <AppHeader />
         <View>
           <View style={styles.buttonsContainer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>this.back()}>
               <Image
                 style={{ width: 300, height: 220, marginLeft: 5 }}
                 source={require('../assets/TeamImage.png')}
@@ -43,13 +66,13 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={()=>this.teamA()}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={()=>this.teamB()}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
 
@@ -66,10 +89,10 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"#FFC300",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 15,
     margin:10,
     width: 150,
