@@ -15,14 +15,14 @@ export default class HomeScreen extends Component {
 
   teamA(){
    db.ref('/').update({
-     'teamA':1
+     'TeamA':1
    })
  }
 
  teamB(){
    console.log(db);
    db.ref('/').update({
-     'teamB':2
+     'TeamB':2
    })
  }
 
