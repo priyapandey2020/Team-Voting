@@ -22,3 +22,4 @@ var AppNavigator = createSwitchNavigator({
 });
 
 const AppContainer = createAppContainer(AppNavigator);
+//I AM CHANGING THE CODE 
