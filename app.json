@@ -13,15 +13,17 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.testuser.teamVoting"
+    },
+    "android": {
+      "package": "com.testuser.teamVoting"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": "A newletter app"
+    "description": "A newsletter app"
   }
 }

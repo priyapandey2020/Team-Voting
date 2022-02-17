@@ -1,24 +1,22 @@
-import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import Constants from 'expo-constants';
+// Modules Import
+import React, { Component } from "react";
+import { View } from "react-native";
+import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
-
-// You can import from local files
-import HomeScreen from './screens/HomeScreen';
-
-export default class App extends React.Component {
+// Files Import
+import HomeScreen from "./screens/HomeScreen";
+export default class App extends Component {
   render() {
     return (
       <View>
-        <AppContainer/>
+        <AppContainer />
       </View>
     );
   }
 }
 
 var AppNavigator = createSwitchNavigator({
-  HomeScreen: HomeScreen
+  HomeScreen: HomeScreen,
 });
 
 const AppContainer = createAppContainer(AppNavigator);
