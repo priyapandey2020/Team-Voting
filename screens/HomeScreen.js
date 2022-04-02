@@ -12,6 +12,9 @@ import AppHeader from '../components/AppHeader';
 import db from '../config';
 
 export default class HomeScreen extends Component {
+  goToNextScreen=()=>{
+    this.props.navigation.navigate('NextScreen');
+  }
 
   teamA(){
    db.ref('/').update({
@@ -28,7 +31,7 @@ export default class HomeScreen extends Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.bg}>
         <AppHeader />
         <View>
           <View style={styles.buttonsContainer}>
@@ -43,13 +46,13 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={()=>{{this.teamA()} this.goToNextScreen()}} >
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={()=>{{this.teamB()} this.goToNextScreen()}} >
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
 
@@ -66,7 +69,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"lightblue",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
@@ -79,4 +82,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 50,
   },
+  bg:{
+    flex:1,
+    backgroundColor:"lightgrey"
+  }
 });
