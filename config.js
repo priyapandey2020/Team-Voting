@@ -1,10 +1,10 @@
 import firebase from 'firebase';
 
-// add SDK Firebase
+// Agregar SDK Firebase
 var firebaseConfig = {
 
 };
-// Initialize Firebase
+// Inicializar Firebase
 firebase.initializeApp(firebaseConfig);
 
 export default firebase.database();

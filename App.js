@@ -4,7 +4,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Constants from 'expo-constants';
 
 
-// You can import from local files
+// Puedes importar desde archivos locales
 import HomeScreen from './screens/HomeScreen';
 
 export default class App extends React.Component {
