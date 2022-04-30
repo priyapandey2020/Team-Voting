@@ -42,13 +42,13 @@ export default class HomeScreen extends Component {
           <View style={styles.ratingContainer}>
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
-              style={styles.buttons}
+              style={styles.buttons1}
               onPress ={this.teamA()}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={styles.buttons}
+              style={styles.buttons2}
               onPress ={this.teamB()}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
@@ -64,9 +64,20 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     alignSelf: 'center',
     marginTop: 50,
+    backgroundColor:'#eccc68'
   },
-  buttons: {
-    backgroundColor:"coral",
+  buttons1: {
+    backgroundColor:"#ff4757",
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderRadius: 15,
+    margin:10,
+    width: 150,
+    height: 50,
+  },
+  buttons2: {
+    backgroundColor:"#5352ed",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
