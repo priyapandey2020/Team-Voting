@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Constants from 'expo-constants';
+import HomeScreen from './screens/HomeScreen';
+import ThankScreen from './screens/GoScreen';
 
 
 // You can import from local files
@@ -18,7 +20,8 @@ export default class App extends React.Component {
 }
 
 var AppNavigator = createSwitchNavigator({
-  HomeScreen: HomeScreen
+  HomeScreen: HomeScreen,
+  ThankScreen : ThankScreen
 });
 
 const AppContainer = createAppContainer(AppNavigator);
