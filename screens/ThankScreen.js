@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import Header from '../components/Header';
+import {View, Text, StyleSheet} from 'react-native';
+import Header from '../components/AppHeader';
 
 export default class GoScreen extends React.Component{
   render(){

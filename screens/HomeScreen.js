@@ -13,11 +13,14 @@ import db from '../config';
 
 export default class HomeScreen extends Component {
 
+  nextScreen =()=>{
+    this.props.navigation.navigate('ThankScreen');
+  }
+
   teamA(){
    db.ref('/').update({
      'teamA':1
    })
-   this.props.navigation.navigate('ThankScreen');
  }
 
  teamB(){
@@ -25,7 +28,6 @@ export default class HomeScreen extends Component {
    db.ref('/').update({
      'teamB':2
    })
-   this.props.navigation.navigate('ThankScreen');
  }
 
   render() {
@@ -43,15 +45,16 @@ export default class HomeScreen extends Component {
           </View>
           <View style={styles.ratingContainer}>
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
+
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={()=> {this.nextScreen(); this.teamA();}} >
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={()=> {this.nextScreen(); this.teamA();}} >
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
 
