@@ -10,21 +10,16 @@ import {
 
 import AppHeader from '../components/AppHeader';
 import db from '../config';
+var tA = undefined;
+var tB = undefined;
+db.ref('teamA').on('value', function (data) {
+  tA = data.val();
+})
+db.ref('teamB').on('value', function (data) {
+  tB = data.val();
+})
 
 export default class HomeScreen extends Component {
-
-  teamA(){
-   db.ref('/').update({
-     'teamA':1
-   })
- }
-
- teamB(){
-   console.log(db);
-   db.ref('/').update({
-     'teamB':2
-   })
- }
 
   render() {
     return (
@@ -43,16 +38,18 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={()=>
+              db.ref('/').update({'teamA':tA+1})}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
-
+            <Text>            No of votes: {tA}</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={()=>
+              db.ref('/').update({'teamB':tB+1})}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
-
+            <Text>            No of votes: {tB}</Text>
           </View>
         </View>
       </View>
