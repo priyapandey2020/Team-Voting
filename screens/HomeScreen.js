@@ -26,6 +26,13 @@ export default class HomeScreen extends Component {
    })
  }
 
+ reset = () => {
+   db.ref("/").update({
+     "teamA": 0,
+     "teamB": 0
+   })
+ }
+
   render() {
     return (
       <View>
@@ -54,6 +61,15 @@ export default class HomeScreen extends Component {
             </TouchableOpacity>
 
           </View>
+
+          <View>
+            <TouchableOpacity 
+              style = {styles.resetButton}
+              onPress = {this.reset()}
+            >
+              <Text style = {styles.resetText}> RESET </Text>
+            </TouchableOpacity>
+           </View> 
         </View>
       </View>
     );
@@ -79,4 +95,20 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 50,
   },
+  resetButton:{
+    width: 150,
+    height:  50,
+    borderWidth: 3,
+    borderColor: "#00ffad",
+    margin: 10,
+    borderRadius: 20,
+    alignItems: "center",
+    alignSelf: "center",
+    backgroundColor: "#aaff00",
+    justifyContent: "center"
+  },
+  resetText: {
+    fontWeight: "bold",
+    fontSize: 20
+  }
 });
