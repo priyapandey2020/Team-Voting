@@ -64,6 +64,8 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     alignSelf: 'center',
     marginTop: 50,
+    backroundColor:"wheat",
+    borderRadius:50
   },
   buttons: {
     backgroundColor:"coral",
