@@ -13,6 +13,14 @@ import db from '../config';
 
 export default class HomeScreen extends Component {
 
+  goToTeamAScreen=()=> {
+    this.props.navigation.navigate('TeamAScreen')
+  }
+
+  goToTeamBScreen=()=> {
+    this.props.navigation.navigate('TeamBScreen')
+  }
+
   teamA(){
    db.ref('/').update({
      'teamA':1
@@ -24,6 +32,16 @@ export default class HomeScreen extends Component {
    db.ref('/').update({
      'teamB':2
    })
+ }
+
+ TeamAClicked(){
+  this.goToTeamAScreen()
+  this.teamA()
+ }
+
+ TeamBClicked(){
+   this.goToTeamBScreen()
+   this.teamB()
  }
 
   render() {
@@ -43,13 +61,13 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={this.TeamAClicked()}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={this.TeamBClicked()}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
 
@@ -60,13 +78,14 @@ export default class HomeScreen extends Component {
   }
 }
 
+
 const styles = StyleSheet.create({
   buttonsContainer: {
     alignSelf: 'center',
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"#F5F5DC",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
