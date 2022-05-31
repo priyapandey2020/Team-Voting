@@ -14,16 +14,16 @@ import db from '../config';
 export default class HomeScreen extends Component {
 
   teamA(){
-   db.ref('/').update({
+   db.ref('votingApp').update({
      'teamA':1
    })
  }
 
  teamB(){
    console.log(db);
-   db.ref('/').update({
+   db.ref('votingApp').update({
      'teamB':2
-   })
+   });
  }
 
   render() {
