@@ -13,10 +13,23 @@ import db from '../config';
 
 export default class HomeScreen extends Component {
 
+  constructor(props){
+    super(props);
+
+    this.state = {
+      pressA: 0,
+      pressB: 0,
+      disabledA: false,
+      disabledB: false
+    }
+  }
+
   teamA(){
    db.ref('/').update({
      'teamA':1
    })
+
+   this.setState({pressA:1,disabledA:true});
  }
 
  teamB(){
@@ -24,6 +37,8 @@ export default class HomeScreen extends Component {
    db.ref('/').update({
      'teamB':2
    })
+
+   this.setState({pressB:1,disabledB:true});
  }
 
   render() {
@@ -42,13 +57,19 @@ export default class HomeScreen extends Component {
           <View style={styles.ratingContainer}>
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
-              style={styles.buttons}
+              disabled={this.state.disabledA}
+              style={
+                this.state.pressA == 1 ? [styles.buttons,{backgroundColor: "red"}]: [styles.buttons,{backgroundColor: "yellow"}]
+              }
               onPress ={this.teamA()}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
-              style={styles.buttons}
+              disabled={this.state.disabledB}
+              style={
+                this.state.pressB == 1 ? [styles.buttons,{backgroundColor: "red"}]: [styles.buttons,{backgroundColor: "yellow"}]
+              }
               onPress ={this.teamB()}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
