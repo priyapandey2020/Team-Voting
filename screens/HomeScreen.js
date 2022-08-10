@@ -21,6 +21,7 @@ export default class HomeScreen extends Component {
 
  teamB(){
    console.log(db);
+   console.log("abc
    db.ref('/').update({
      'teamB':2
    })
