@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"pink",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
@@ -80,3 +80,4 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
 });
+
