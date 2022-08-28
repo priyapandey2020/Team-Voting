@@ -14,13 +14,14 @@ import db from '../config';
 export default class HomeScreen extends Component {
 
   teamA(){
-   db.ref('/').update({
+    //update vote values of Team A in the database
+    db.ref('/').update({
      'teamA':1
    })
+    
  }
 
  teamB(){
-   console.log(db);
    db.ref('/').update({
      'teamB':2
    })
@@ -34,17 +35,17 @@ export default class HomeScreen extends Component {
           <View style={styles.buttonsContainer}>
             <TouchableOpacity>
               <Image
-                style={{ width: 300, height: 220, marginLeft: 5 }}
-                source={require('../assets/TeamImage.png')}
+                style={{ width: 300, height: 300, marginLeft: 5 }}
+                source={require('../assets/TeamImage.jpg')}
               />
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
-            <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
+            <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here for TEAM A or TEAM B</Text>
             <TouchableOpacity
               style={styles.buttons}
               onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              <Text style={{ fontSize:15}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -63,20 +64,20 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   buttonsContainer: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 30,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"purple",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 15,
-    margin:10,
+    margin:15,
     width: 150,
     height: 50,
   },
   ratingContainer: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 10,
   },
 });
