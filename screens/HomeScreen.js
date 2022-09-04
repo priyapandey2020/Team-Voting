@@ -8,21 +8,24 @@ import {
   Image,
 } from 'react-native';
 
+
 import AppHeader from '../components/AppHeader';
 import db from '../config';
-
+ var score=0;
 export default class HomeScreen extends Component {
 
   teamA(){
-   db.ref('/').update({
-     'teamA':1
+   db.ref('Teams').update({
+     'teamA':score=score+1
+    
    })
  }
 
  teamB(){
    console.log(db);
-   db.ref('/').update({
-     'teamB':2
+   db.ref('Teams').update({
+     'teamB':score=score+1
+
    })
  }
 
@@ -63,7 +66,7 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   buttonsContainer: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 15,
   },
   buttons: {
     backgroundColor:"coral",
@@ -71,12 +74,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderRadius: 15,
-    margin:10,
+    margin :10,
     width: 150,
     height: 50,
   },
   ratingContainer: {
     alignSelf: 'center',
-    marginTop: 50,
+    marginTop: 10,
   },
 });
