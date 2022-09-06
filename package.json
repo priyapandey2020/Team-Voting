@@ -4,26 +4,22 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
+    "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~38.0.8",
-    "expo-status-bar": "^1.0.2",
-    "react": "~16.11.0",
-    "react-dom": "~16.11.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-    "react-native-web": "~0.11.7",
+    "expo": "~46.0.9",
+    "expo-status-bar": "~1.4.0",
+    "react": "18.0.0",
+    "react-native": "0.69.5",
     "firebase": "7.9.0",
-    "expo-constants": "~9.1.1",
+    "expo-constants": "~13.2.4",
     "react-navigation": "4.0.10",
-    "@expo/vector-icons": "^10.0.0",
+    "@expo/vector-icons": "^13.0.0",
     "react-native-paper": "3.1.1",
     "@react-navigation/native": "^3.6.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.6",
-    "babel-preset-expo": "~8.1.0"
+    "@babel/core": "^7.12.9"
   },
   "private": true
 }
