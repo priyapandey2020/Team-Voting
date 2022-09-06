@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+
 import {
   Text,
   View,
@@ -17,6 +19,7 @@ export default class HomeScreen extends Component {
    db.ref('/').update({
      'teamA':1
    })
+   
  }
 
  teamB(){
@@ -25,7 +28,16 @@ export default class HomeScreen extends Component {
      'teamB':2
    })
  }
-
+ onPress1 = () => {
+              this.teamA();
+              this.props.navigation.navigate('Thankyouscreen')();
+    
+  };
+ onPress2 = () => {
+              this.teamB();
+              this.props.navigation.navigate('Thankyouscreen')();
+    
+  };
   render() {
     return (
       <View>
@@ -40,16 +52,17 @@ export default class HomeScreen extends Component {
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
-            <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
+            <Text style={{ textAlign: 'center',fontSize:25,fontFamily: 'roboto'}}>Vote Here</Text>
+            
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={this.onPress1}> 
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={this.onPress2}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
 
@@ -60,13 +73,16 @@ export default class HomeScreen extends Component {
   }
 }
 
+
+
+
 const styles = StyleSheet.create({
   buttonsContainer: {
     alignSelf: 'center',
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"#268085",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
