@@ -15,7 +15,7 @@ export default class HomeScreen extends Component {
 
   teamA(){
    db.ref('/').update({
-     'teamA':1
+     'teamA':2
    })
  }
 
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
   buttons: {
-    backgroundColor:"coral",
+    backgroundColor:"aquamarine",
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
