@@ -30,7 +30,7 @@ export default class HomeScreen extends Component {
     return (
       <View>
         <AppHeader />
-        <View>
+        <View style={{backgroundColor:"lightblue"}}>
           <View style={styles.buttonsContainer}>
             <TouchableOpacity>
               <Image
@@ -43,14 +43,14 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
-              <Text style={{ fontSize:20}}>Team A</Text>
+              onPress ={()=>this.teamA()}>
+              <Text style={{ fontSize:20,fontStyle:"italic",fontFamily:"Calibri light"}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
-              <Text style={{ fontSize:20}}>Team B</Text>
+              onPress ={()=>this.teamB()}>
+              <Text style={{ fontSize:20, fontStyle:"italic",fontFamily:"Calibri light"}}>Team B</Text>
             </TouchableOpacity>
 
           </View>
