@@ -7,18 +7,15 @@ import {
   Header,
   Image,
 } from 'react-native';
-
 import AppHeader from '../components/AppHeader';
 import db from '../config';
 
 export default class HomeScreen extends Component {
-
   teamA(){
    db.ref('/').update({
      'teamA':1
    })
  }
-
  teamB(){
    console.log(db);
    db.ref('/').update({
