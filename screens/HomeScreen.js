@@ -11,18 +11,24 @@ import {
 import AppHeader from '../components/AppHeader';
 import db from '../config';
 
+var pointA= 0 ;
+var pointB= 0 ;
+
 export default class HomeScreen extends Component {
 
-  teamA(){
+  teamA=()=>{
+    pointA = pointA+1
+    console.log(pointA +" inside teamA")
    db.ref('/').update({
-     'teamA':1
+     'teamA':pointA
    })
  }
 
- teamB(){
-   console.log(db);
+ teamB=()=>{
+       pointB = pointB+1
+       console.log(pointB +" inside teamB")
    db.ref('/').update({
-     'teamB':2
+     'teamB':pointB
    })
  }
 
@@ -43,13 +49,14 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={()=>this.teamA()}>
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamB()}>
+              onPress ={
+              ()=>this.teamB()}>
               <Text style={{ fontSize:20}}>Team B</Text>
             </TouchableOpacity>
 
