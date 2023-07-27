@@ -15,14 +15,14 @@ export default class HomeScreen extends Component {
 
   teamA(){
    db.ref('/').update({
-     'teamA':1
+     'teamA':10
    })
  }
 
  teamB(){
    console.log(db);
    db.ref('/').update({
-     'teamB':2
+     'teamB':10
    })
  }
 
@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
     backgroundColor:"coral",
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
-    borderRadius: 15,
+    borderWidth: 2,
+    borderRadius: 20,
     margin:10,
     width: 150,
     height: 50,
