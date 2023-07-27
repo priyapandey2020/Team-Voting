@@ -5,13 +5,13 @@ import Constants from 'expo-constants';
 
 
 // You can import from local files
-import HomeScreen from './screens/HomeScreen';
+import HomeScreen from './screens/HomeScreen';//hello
 
 export default class App extends React.Component {
   render() {
     return (
       <View>
-        <AppContainer/>
+        <AppContainer/> 
       </View>
     );
   }
