@@ -13,17 +13,33 @@ import db from '../config';
 
 export default class HomeScreen extends Component {
 
+  constructor () {
+    super();
+    this.state =  {
+      vote_count_a: 0,
+      vote_count_b: 0
+    }
+  }
+
   teamA(){
+
+    var Vote_count_A = 0
    db.ref('/').update({
      'teamA':1
    })
+
+   this.setState(this.state.vote_count_a = Vote_count_A+ 1)
  }
 
  teamB(){
+
+  var Vote_count_B = 0
    console.log(db);
    db.ref('/').update({
      'teamB':2
    })
+
+   this.setState(this.state.vote_count_b = Vote_count_B+ 1)
  }
 
   render() {
@@ -43,7 +59,8 @@ export default class HomeScreen extends Component {
             <Text style={{ textAlign: 'center',fontSize:25 }}>Vote Here</Text>
             <TouchableOpacity
               style={styles.buttons}
-              onPress ={this.teamA()}>
+              onPress ={this.teamA()}
+              >
               <Text style={{ fontSize:20}}>Team A</Text>
             </TouchableOpacity>
 
