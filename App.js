@@ -6,6 +6,8 @@ import Constants from 'expo-constants';
 
 // You can import from local files
 import HomeScreen from './screens/HomeScreen';
+import Team1Screen from './screens/Team1Screen';
+import Team2Screen from './Team2Screen';
 
 export default class App extends React.Component {
   render() {
@@ -17,8 +19,15 @@ export default class App extends React.Component {
   }
 }
 
-var AppNavigator = createSwitchNavigator({
-  HomeScreen: HomeScreen
-});
+var AppNavigator = createSwitchNavigator(
+  {
+    HomeScreen:{Screen: HomeScreen},
+    Team1:{Screen : Team1Screen},
+    Team2 : {Screen : Team2Screen}
+  },
+  {
+    initialRouteName : HomeScreen
+  }
+);
 
 const AppContainer = createAppContainer(AppNavigator);

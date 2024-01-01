@@ -17,6 +17,7 @@ export default class HomeScreen extends Component {
    db.ref('/').update({
      'teamA':1
    })
+   this.props.navigation.navigate("Team1")
  }
 
  teamB(){
@@ -24,6 +25,7 @@ export default class HomeScreen extends Component {
    db.ref('/').update({
      'teamB':2
    })
+   this.props.navigation.navigate("Team2")
  }
 
   render() {
